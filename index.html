@@ -1,58 +1,117 @@
-
+<!DOCTYPE html> <!-- File managed by WebFX (DO NOT EDIT MANUALLY) -->
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <title>This site is brand new</title>
-    <style>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <title>Mongoose Back-Office</title>
+        <style>
+    /*********************************************
+    *** Page loading spinner (Material Design) ***
+    *********************************************/
 
+    #loadingSpinner {
+        position: fixed;
+        width: 100%;
+        height: 90%;
+        z-index: 100;
+        pointer-events: none;
+    }
 
-  html
-  {
-    font-size: 62.5%;
-  }
+    #loadingSpinner, #loadingSpinner tr, #loadingSpinner td {
+        border: none;
+        background: transparent;
+    }
 
-  body
-  {
-    margin: 0;
-    padding: 0;
-    font-size: 1.6rem;
-    color: #353535;
-    background: linear-gradient(to bottom, #ccc, #fff 30%);
-    background-repeat: no-repeat;
-  }
+    .loader {
+        position: relative;
+        margin: 0 auto;
+        width: 100px;
+    }
 
-  h1,h3
-  {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-  }
+    .loader:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
 
+    .circular {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        animation: rotate 2s linear infinite;
+        transform-origin: center center;
+    }
 
-  h1
-  {
-    margin: 20rem 0 1rem;
-    font-size: 3rem;
-  }
+    .path {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+        stroke-linecap: round;
+    }
 
-  h3
-  {
-    font-weight: normal;
-    font-size: 1.4rem;
-  }
-  </style>
-</head>
-<body>
-<h1>This Site is Brand New</h1>
-<h3>Please check back again soon</h3>
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-</body>
+    @keyframes rotate {
+        100% {
+        transform: rotate(360deg);
+        }
+    }
+
+    @keyframes dash {
+        0% {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+        }
+        50% {
+            stroke-dasharray: 89, 200;
+            stroke-dashoffset: -35px;
+        }
+        100% {
+            stroke-dasharray: 89, 200;
+            stroke-dashoffset: -124px;
+        }
+    }
+
+    @keyframes color {
+        100%,
+        0% {
+            stroke: #d62d20;
+        }
+        40% {
+            stroke: #0057e7;
+        }
+        66% {
+            stroke: #008744;
+        }
+        80%,
+        90% {
+            stroke: #ffa700;
+        }
+    }
+</style>
+        <link href="dev/webfx/kit/mapper/peers/javafxcontrols/gwt/html/perfect-scrollbar.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <table id="loadingSpinner">
+            <tr>
+                <td style="text-align: center; vertical-align: middle;">
+                    <div class="loader">
+                        <svg class="circular">
+                            <circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
+                        </svg>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <script charset="utf-8" src="dev/webfx/platform/client/services/websocket/spi/impl/gwt/sockjs.min.js" type="text/javascript"></script>
+        <script charset="utf-8" src="dev/webfx/platform/client/services/websocket/spi/impl/gwt/sockjs-quickstart.js" type="text/javascript"></script>
+        <script charset="utf-8" src="emul/java/util/regex/xregexp.js" type="text/javascript"></script>
+        <script charset="utf-8" src="mongoose_all_backoffice_application_gwt.nocache.js" type="text/javascript"></script>
+        <script charset="utf-8" src="dev/webfx/kit/mapper/peers/javafxcontrols/gwt/html/perfect-scrollbar.min.js" type="text/javascript"></script>
+
+    </body>
 </html>
