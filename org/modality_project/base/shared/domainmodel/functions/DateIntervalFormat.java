@@ -1,4 +1,4 @@
-package mongoose.base.shared.domainmodel.functions;
+package org.modality_project.base.shared.domainmodel.functions;
 
 import dev.webfx.extras.type.PrimType;
 import dev.webfx.extras.type.Type;

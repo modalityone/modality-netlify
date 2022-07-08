@@ -1,4 +1,4 @@
-package mongoose.base.shared.domainmodel.formatters;
+package org.modality_project.base.shared.domainmodel.formatters;
 
 import dev.webfx.framework.shared.orm.domainmodel.formatter.ValueFormatter;
 import dev.webfx.framework.shared.orm.domainmodel.formatter.ValueParser;

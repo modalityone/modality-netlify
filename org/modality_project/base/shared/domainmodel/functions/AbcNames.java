@@ -1,4 +1,4 @@
-package mongoose.base.shared.domainmodel.functions;
+package org.modality_project.base.shared.domainmodel.functions;
 
 import dev.webfx.framework.shared.orm.expression.lci.DomainReader;
 import dev.webfx.framework.shared.orm.expression.terms.function.Function;
