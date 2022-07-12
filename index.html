@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Last updated: 2022-07-11">
+<meta name="author" content="Last updated: 2022-07-12">
 <title>Modality Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -591,7 +591,7 @@ window.onload = function() {
 <div id="header">
 <h1>Modality Documentation</h1>
 <div class="details">
-<span id="author" class="author">Last updated: 2022-07-11</span><br>
+<span id="author" class="author">Last updated: 2022-07-12</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -599,6 +599,7 @@ window.onload = function() {
 <li><a href="#_introduction">Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#_what_is_modality">What is Modality?</a></li>
+<li><a href="#_the_modality_architecture">The Modality Architecture</a></li>
 </ul>
 </li>
 <li><a href="#_installation">Installation</a>
@@ -609,9 +610,10 @@ window.onload = function() {
 <li><a href="#_4_prepare_docker_environment_variables">4. Prepare Docker environment variables</a></li>
 <li><a href="#_5_build_the_docker_containers">5. Build the Docker containers</a></li>
 <li><a href="#_6_start_the_containers_and_build_the_database">6. Start the containers and build the database</a></li>
-<li><a href="#_7_create_run_configuration_for_modality_server">7. Create Run Configuration for Modality Server</a></li>
-<li><a href="#_8_create_run_configuration_for_modality_back_office">8. Create Run Configuration for Modality Back Office</a></li>
-<li><a href="#_9_run_modality_locally">9. Run Modality (locally)</a></li>
+<li><a href="#_7_install_your_ide">7. Install your IDE</a></li>
+<li><a href="#_8_create_run_configuration_for_modality_server">8. Create Run Configuration for Modality Server</a></li>
+<li><a href="#_9_create_run_configuration_for_modality_back_office">9. Create Run Configuration for Modality Back-Office</a></li>
+<li><a href="#_10_run_modality_back_office_client_locally">10. Run Modality Back-Office client locally</a></li>
 </ul>
 </li>
 <li><a href="#_using_docker">Using Docker</a>
@@ -637,8 +639,134 @@ window.onload = function() {
 <div class="sect2">
 <h3 id="_what_is_modality">What is Modality?</h3>
 <div class="paragraph">
-<p>Modality is a modular hospitality system, supporting a wide range of bookable, customisable events, together with associated options, such as onsite/offsite accommodation, transport, meals, translation, etc&#8230;&#8203;</p>
+<p>Modality is a Java-based, modular, hospitality-oriented booking system. Multiple organisations, events and properties are supported, together with a wide range of hospitality-related add-ons, such as meals, transport, translation, special needs and more.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_the_modality_architecture">The Modality Architecture</h3>
+<div class="paragraph">
+<p>Modality is developed using the following technologies:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.oracle.com/java/technologies/downloads/">Java</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Codebase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://openjfx.io/">JavaFX</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Desktop + mobile UI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.webfx.dev/">WebFX</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web UI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Latest (Beta)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#8230;&#8203;consists of four client applications:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compilation Toolchain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Front-Office (Mobile)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gluon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Front-Office (Web)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WebFX + GWT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Back-Office (Desktop)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JavaFX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Back-Office (Web)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WebFX + GWT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#8230;&#8203;one embedded web server:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://vertx.io/">Vert.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>&#8230;&#8203;and the following set of back-end dependencies, which are orchestrated by <a href="https://www.docker.com/products/docker-desktop/">Docker</a> on the localhost:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.postgresql.org/">Postgres</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Database</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://redis.io/">Redis</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Session management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://flywaydb.org/">Flyway</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Database schema updates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -706,14 +834,19 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The database scripts are stored in the <code>modality-base/modality-base-server-datasource/src/main/resources/db/</code> folder, and are executed sequentially by the <a href="https://flywaydb.org/" target="_blank" rel="noopener">Flyway</a> database version control container. Please allow several minutes for Flyway to complete. Once finished, you
-are now up and running with all the external services that Modality depends on.</p>
+<p>The database scripts are stored in the <code>modality-base/modality-base-server-datasource/src/main/resources/db/</code> folder, and are executed sequentially by the <a href="https://flywaydb.org/" target="_blank" rel="noopener">Flyway</a> database version control container. Please allow several minutes for Flyway to complete. Once finished, you are now up and running with all the external services that Modality depends on.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_7_create_run_configuration_for_modality_server">7. Create Run Configuration for Modality Server</h3>
+<h3 id="_7_install_your_ide">7. Install your IDE</h3>
 <div class="paragraph">
-<p>The Modality server is a Vert.x server that proxies requests to the database and is responsible for establishing and maintaining sessions etc.</p>
+<p>We develop Modality using the free, community edition of <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>, and recommend you install this if you do not already have an IDE. IntelliJ allows you to easily compile and run the Modality server and clients, for the purpose of local development and testing. All subsequent IDE-based examples given in this documentation will be based on IntelliJ.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_create_run_configuration_for_modality_server">8. Create Run Configuration for Modality Server</h3>
+<div class="paragraph">
+<p>In order to run any of the Modality client applications, the Modality server should first be running. The Modality server is a <a href="https://vertx.io/">Vert.x</a> server that proxies requests to the database and is responsible for establishing and maintaining sessions etc. The easiest way to stand up the server locally is to create a run configuration in your IDE, as shown below in IntelliJ. In the application menu, click <code>Run &#8594; Edit Configurations</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -722,9 +855,9 @@ are now up and running with all the external services that Modality depends on.<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_8_create_run_configuration_for_modality_back_office">8. Create Run Configuration for Modality Back Office</h3>
+<h3 id="_9_create_run_configuration_for_modality_back_office">9. Create Run Configuration for Modality Back-Office</h3>
 <div class="paragraph">
-<p>The Modality back office is the application used by administrators of Modality, and is where new organisations and events are created etc.</p>
+<p>The Modality Back Office is the application used by administrators of Modality, and is where new organisations and events are created etc. Create another run configuration and populate it with the details given in the screenshot below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -733,7 +866,7 @@ are now up and running with all the external services that Modality depends on.<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_9_run_modality_locally">9. Run Modality (locally)</h3>
+<h3 id="_10_run_modality_back_office_client_locally">10. Run Modality Back-Office client locally</h3>
 <div class="colist arabic">
 <table>
 <tr>
@@ -742,9 +875,12 @@ are now up and running with all the external services that Modality depends on.<
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Execute the Modality Back Office run configuration</td>
+<td>Execute the Modality Back-Office run configuration. The Back-Office GUI should then display, as shown below:</td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>TO BE ADDED HERE</p>
 </div>
 </div>
 </div>
@@ -961,7 +1097,7 @@ of this documentation.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-11 15:53:23 UTC
+Last updated 2022-07-12 10:19:15 UTC
 </div>
 </div>
 </body>
