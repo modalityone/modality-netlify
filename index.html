@@ -612,16 +612,19 @@ window.onload = function() {
 </li>
 <li><a href="#_installation">Installation</a>
 <ul class="sectlevel2">
-<li><a href="#_1_create_the_modality_root">1. Create the Modality root</a></li>
-<li><a href="#_2_clone_the_codebase">2. Clone the codebase</a></li>
-<li><a href="#_3_install_docker">3. Install Docker</a></li>
-<li><a href="#_4_prepare_docker_environment_variables">4. Prepare Docker environment variables</a></li>
-<li><a href="#_5_build_the_docker_containers">5. Build the Docker containers</a></li>
-<li><a href="#_6_start_the_containers_to_build_the_database">6. Start the containers to build the database</a></li>
-<li><a href="#_7_install_intellij_idea">7. Install IntelliJ IDEA</a></li>
+<li><a href="#_1_install_java">1. Install Java</a></li>
+<li><a href="#_2_install_javafx">2. Install JavaFX</a></li>
+<li><a href="#_3_install_intellij_idea">3. Install IntelliJ IDEA</a></li>
+<li><a href="#_4_install_docker">4. Install Docker</a></li>
+<li><a href="#_4_install_git">4. Install Git</a></li>
+<li><a href="#_6_create_the_modality_root">6. Create the Modality root</a></li>
+<li><a href="#_7_clone_the_codebase">7. Clone the codebase</a></li>
+<li><a href="#_8_prepare_docker_environment_variables">8. Prepare Docker environment variables</a></li>
+<li><a href="#_9_build_the_docker_containers">9. Build the Docker containers</a></li>
+<li><a href="#_10_start_the_containers_to_build_the_database">10. Start the containers to build the database</a></li>
 </ul>
 </li>
-<li><a href="#_configure_modality_for_localhost">Configure Modality for localhost</a>
+<li><a href="#_configure_modality_for_development">Configure Modality for Development</a>
 <ul class="sectlevel2">
 <li><a href="#_create_a_run_configuration_for_modality_server">Create a Run Configuration for Modality Server</a></li>
 <li><a href="#_create_a_run_configuration_for_modality_back_office_desktop_client">Create a Run Configuration for Modality Back-Office (Desktop) client</a></li>
@@ -630,7 +633,7 @@ window.onload = function() {
 <li><a href="#_create_a_run_configuration_for_modality_front_office_web_client">Create a Run Configuration for Modality Front-Office (Web) client</a></li>
 </ul>
 </li>
-<li><a href="#_run_modality_on_localhost">Run Modality on localhost</a>
+<li><a href="#_run_modality_on_development">Run Modality on Development</a>
 <ul class="sectlevel2">
 <li><a href="#_ensure_docker_is_running">Ensure Docker is running <strong class="red">*</strong></a></li>
 <li><a href="#_start_the_modality_server">Start the Modality Server <strong class="red">*</strong></a></li>
@@ -850,7 +853,7 @@ window.onload = function() {
 <div class="sect2">
 <h3 id="_native_mobile_applications">Native mobile applications</h3>
 <div class="paragraph">
-<p>Modality uses the <a href="https://gluonhq.com/products/mobile/">Gluon</a> toolchain to compile the codebase into native, installable apps ready for inclusion into the Google Play and Apple App store.</p>
+<p>Modality uses the <a href="https://gluonhq.com/products/mobile/">Gluon</a> toolchain to compile the codebase into native, installable apps ready for inclusion into the Google Play and Apple App stores.</p>
 </div>
 </div>
 <div class="sect2">
@@ -865,30 +868,55 @@ window.onload = function() {
 <h2 id="_installation">Installation</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_1_create_the_modality_root">1. Create the Modality root</h3>
-<div class="literalblock">
-<div class="content">
-<pre>mkdir -vp modality
-export MODALITY_ROOT=${PWD}/modality</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_2_clone_the_codebase">2. Clone the codebase</h3>
+<h3 id="_1_install_java">1. Install Java</h3>
 <div class="paragraph">
-<p>Git clone the Modality codebase via the terminal (or IntelliJ etc):</p>
+<p>Modality is developed entirely in the Java language, and requires at least JDK 17+. Check whether this is installed:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>cd $MODALITY_ROOT
-git clone https://github.com/mongoose-project/modality.git .</pre>
+<pre>java --version</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>If it is not installed, or is an older version, you may wish to refer to <a href="https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A">this guide</a> for quick and easy ways to install the latest Java JDK on your machine.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_3_install_docker">3. Install Docker</h3>
+<h3 id="_2_install_javafx">2. Install JavaFX</h3>
 <div class="paragraph">
-<p>Modality uses Docker for all external services, including the database and the in-memory datastore for sessions.</p>
+<p>The user interfaces in Modality are partly built with JavaFX. Check whether JavaFX is installed with the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>echo $PATH_TO_FX</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If it is not installed, please refer to <a href="https://openjfx.io/openjfx-docs/#install-javafx">this guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_install_intellij_idea">3. Install IntelliJ IDEA</h3>
+<div class="paragraph">
+<p>We develop Modality using the free, community edition of <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>, and recommend you install this if you do not already have an IDE. IntelliJ allows you to easily compile and run the Modality server and clients, for the purpose of local development and testing.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All subsequent IDE-based examples given in this documentation will be based on IntelliJ.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_install_docker">4. Install Docker</h3>
+<div class="paragraph">
+<p>During development, Modality uses Docker for all external services, including the database and the in-memory datastore for sessions.</p>
 </div>
 <div class="paragraph">
 <p>Please install Docker on your local machine if you do not have it already. If using a Mac, the easiest way is to install using <code>brew</code>. Please provide Docker with a minimum of 8GB of RAM, ideally more.</p>
@@ -907,7 +935,42 @@ Insufficient RAM may result in <code>java.lang.OutOfMemoryError</code> errors wh
 </div>
 </div>
 <div class="sect2">
-<h3 id="_4_prepare_docker_environment_variables">4. Prepare Docker environment variables</h3>
+<h3 id="_4_install_git">4. Install Git</h3>
+<div class="paragraph">
+<p>A git client is needed to retrieve the Modality codebase from GitHub. Check if git is installed with the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git --version</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If it is not installed, you may wish to refer to <a href="https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/">this guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_create_the_modality_root">6. Create the Modality root</h3>
+<div class="literalblock">
+<div class="content">
+<pre>mkdir -vp modality
+export MODALITY_ROOT=${PWD}/modality</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_7_clone_the_codebase">7. Clone the codebase</h3>
+<div class="paragraph">
+<p>Git clone the Modality codebase via the terminal (or IntelliJ etc):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cd $MODALITY_ROOT
+git clone https://github.com/mongoose-project/modality.git .</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_prepare_docker_environment_variables">8. Prepare Docker environment variables</h3>
 <div class="paragraph">
 <p>Environment variables store the Postgres database name, username and password. Defaults are provided in the <code>.env-template</code>. Use this template file as the basis for your Docker-based configuration, by creating an <code>.env</code> file from it. You may leave the defaults, or provide new values accordingly:</p>
 </div>
@@ -920,7 +983,7 @@ source .env # make the environment variables available to the shell</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_5_build_the_docker_containers">5. Build the Docker containers</h3>
+<h3 id="_9_build_the_docker_containers">9. Build the Docker containers</h3>
 <div class="literalblock">
 <div class="content">
 <pre>cd $MODALITY_ROOT/docker
@@ -929,7 +992,7 @@ docker-compose build --no-cache</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_6_start_the_containers_to_build_the_database">6. Start the containers to build the database</h3>
+<h3 id="_10_start_the_containers_to_build_the_database">10. Start the containers to build the database</h3>
 <div class="literalblock">
 <div class="content">
 <pre>cd $MODALITY_ROOT/docker
@@ -937,31 +1000,16 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The database scripts are stored in the <code>modality-base/modality-base-server-datasource/src/main/resources/db/</code> folder, and are executed sequentially by the <a href="https://flywaydb.org/" target="_blank" rel="noopener">Flyway</a> database version control container. Please allow several minutes for Flyway to complete. Once finished, you will now up and running with all the external services that Modality depends on.</p>
+<p>The database scripts are stored in the <code>modality-base/modality-base-server-datasource/src/main/resources/db/</code> folder, and are executed sequentially by the <a href="https://flywaydb.org/" target="_blank" rel="noopener">Flyway</a> database version control container.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_7_install_intellij_idea">7. Install IntelliJ IDEA</h3>
 <div class="paragraph">
-<p>We develop Modality using the free, community edition of <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>, and recommend you install this if you do not already have an IDE. IntelliJ allows you to easily compile and run the Modality server and clients, for the purpose of local development and testing.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-All subsequent IDE-based examples given in this documentation will be based on IntelliJ.
-</td>
-</tr>
-</table>
+<p>Please allow several minutes for Flyway to complete. Once finished, you will now up and running with all the external services that Modality depends on.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configure_modality_for_localhost">Configure Modality for localhost</h2>
+<h2 id="_configure_modality_for_development">Configure Modality for Development</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_create_a_run_configuration_for_modality_server">Create a Run Configuration for Modality Server</h3>
@@ -1053,7 +1101,7 @@ Documentation not yet available.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_run_modality_on_localhost">Run Modality on localhost</h2>
+<h2 id="_run_modality_on_development">Run Modality on Development</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Modality clients run independently of each other, but all require the Modality Server to be running, which in turn requires Docker to be running the service containers described above. Therefore, the first two steps below are mandatory before running one or more of the Modality clients locally.</p>
@@ -1356,7 +1404,7 @@ of this documentation.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-12 15:03:29 UTC
+Last updated 2022-07-12 15:35:43 UTC
 </div>
 </div>
 </body>
