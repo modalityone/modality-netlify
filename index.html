@@ -599,7 +599,9 @@ window.onload = function() {
 <li><a href="#_introduction">Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#_what_is_modality">What is Modality?</a></li>
+<li><a href="#_why_the_name">Why the name?</a></li>
 <li><a href="#_the_modality_architecture">The Modality Architecture</a></li>
+<li><a href="#_introducing_webfx">Introducing WebFX</a></li>
 </ul>
 </li>
 <li><a href="#_installation">Installation</a>
@@ -615,21 +617,21 @@ window.onload = function() {
 </li>
 <li><a href="#_configure_modality_for_localhost">Configure Modality for localhost</a>
 <ul class="sectlevel2">
-<li><a href="#_1_create_a_run_configuration_for_the_modality_server">1. Create a Run Configuration for the Modality Server</a></li>
-<li><a href="#_2_create_a_run_configuration_for_the_modality_back_office_desktop_client">2. Create a Run Configuration for the Modality Back-Office (Desktop) client</a></li>
-<li><a href="#_3_create_a_run_configuration_for_the_modality_back_office_web_client">3. Create a Run Configuration for the Modality Back-Office (Web) client</a></li>
-<li><a href="#_4_create_a_run_configuration_for_the_modality_front_office_mobile_client">4. Create a Run Configuration for the Modality Front-Office (Mobile) client</a></li>
-<li><a href="#_5_create_a_run_configuration_for_the_modality_front_office_web_client">5. Create a Run Configuration for the Modality Front-Office (Web) client</a></li>
+<li><a href="#_create_a_run_configuration_for_modality_server">Create a Run Configuration for Modality Server</a></li>
+<li><a href="#_create_a_run_configuration_for_modality_back_office_desktop_client">Create a Run Configuration for Modality Back-Office (Desktop) client</a></li>
+<li><a href="#_create_a_run_configuration_for_modality_back_office_web_client">Create a Run Configuration for Modality Back-Office (Web) client</a></li>
+<li><a href="#_create_a_run_configuration_for_modality_front_office_mobile_client">Create a Run Configuration for Modality Front-Office (Mobile) client</a></li>
+<li><a href="#_create_a_run_configuration_for_modality_front_office_web_client">Create a Run Configuration for Modality Front-Office (Web) client</a></li>
 </ul>
 </li>
 <li><a href="#_run_modality_on_localhost">Run Modality on localhost</a>
 <ul class="sectlevel2">
-<li><a href="#_1_ensure_docker_is_running">1. Ensure Docker is running <strong class="red">*</strong></a></li>
-<li><a href="#_2_start_the_modality_server">2. Start the Modality Server <strong class="red">*</strong></a></li>
-<li><a href="#_3_start_the_modality_back_office_desktop_client">3. Start the Modality Back-Office (Desktop) client</a></li>
-<li><a href="#_4_start_the_modality_back_office_web_client">4. Start the Modality Back-Office (Web) client</a></li>
-<li><a href="#_5_start_the_modality_front_office_mobile_client">5. Start the Modality Front-Office (Mobile) client</a></li>
-<li><a href="#_6_start_the_modality_front_office_web_client">6. Start the Modality Front-Office (Web) client</a></li>
+<li><a href="#_ensure_docker_is_running">Ensure Docker is running <strong class="red">*</strong></a></li>
+<li><a href="#_start_the_modality_server">Start the Modality Server <strong class="red">*</strong></a></li>
+<li><a href="#_start_modality_back_office_desktop_client">Start Modality Back-Office (Desktop) client</a></li>
+<li><a href="#_start_modality_back_office_web_client">Start Modality Back-Office (Web) client</a></li>
+<li><a href="#_start_modality_front_office_mobile_client">Start Modality Front-Office (Mobile) client</a></li>
+<li><a href="#_start_the_modality_front_office_web_client">Start the Modality Front-Office (Web) client</a></li>
 </ul>
 </li>
 <li><a href="#_modality_database">Modality Database</a></li>
@@ -657,8 +659,11 @@ window.onload = function() {
 <div class="paragraph">
 <p>Modality is a Java-based, modular, hospitality-oriented booking system. Multiple organisations, events and properties are supported, together with a wide range of hospitality-related add-ons, such as meals, transport, translation, special needs and more.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_why_the_name">Why the name?</h3>
 <div class="paragraph">
-<p>Modality is the first large-scale project to use <a href="docs.webfx.dev">WebFX</a> - a toolkit which transpiles JavaFX applications into pure JavaScript web apps for direct execution in the browser.</p>
+<p>'Modality' is a fusion of two words, 'modular' and 'hospitality', a nod to both the software&#8217;s design and purpose.</p>
 </div>
 </div>
 <div class="sect2">
@@ -755,7 +760,7 @@ window.onload = function() {
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://vertx.io/">Vert.x</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interface between client apps and back-end services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interface between client apps and back-end services; serves the SPA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Latest</p></td>
 </tr>
 </tbody>
@@ -796,6 +801,12 @@ window.onload = function() {
 </table>
 <div class="paragraph">
 <p>The services are orchestrated by <a href="https://www.docker.com/products/docker-desktop/">Docker</a> when running Modality on the localhost (instructions given later in this document).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_introducing_webfx">Introducing WebFX</h3>
+<div class="paragraph">
+<p>Modality is the first large-scale project to use <a href="docs.webfx.dev">WebFX</a> - a toolkit which transpiles JavaFX applications into pure JavaScript web apps for direct execution in the browser.</p>
 </div>
 </div>
 </div>
@@ -903,7 +914,7 @@ All subsequent IDE-based examples given in this documentation will be based on I
 <h2 id="_configure_modality_for_localhost">Configure Modality for localhost</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_1_create_a_run_configuration_for_the_modality_server">1. Create a Run Configuration for the Modality Server</h3>
+<h3 id="_create_a_run_configuration_for_modality_server">Create a Run Configuration for Modality Server</h3>
 <div class="paragraph">
 <p>In order to run any of the Modality client applications, the Modality Server should first be running. The Modality Server is a <a href="https://vertx.io/">Vert.x</a> server that proxies requests to the database and is responsible for establishing and maintaining user sessions.</p>
 </div>
@@ -928,7 +939,7 @@ All subsequent IDE-based examples given in this documentation will be based on I
 </div>
 </div>
 <div class="sect2">
-<h3 id="_2_create_a_run_configuration_for_the_modality_back_office_desktop_client">2. Create a Run Configuration for the Modality Back-Office (Desktop) client</h3>
+<h3 id="_create_a_run_configuration_for_modality_back_office_desktop_client">Create a Run Configuration for Modality Back-Office (Desktop) client</h3>
 <div class="paragraph">
 <p>The Modality Back-Office (Desktop) client is the application used by administrators of Modality, and is where new organisations and events are created etc.</p>
 </div>
@@ -945,7 +956,7 @@ All subsequent IDE-based examples given in this documentation will be based on I
 </div>
 </div>
 <div class="sect2">
-<h3 id="_3_create_a_run_configuration_for_the_modality_back_office_web_client">3. Create a Run Configuration for the Modality Back-Office (Web) client</h3>
+<h3 id="_create_a_run_configuration_for_modality_back_office_web_client">Create a Run Configuration for Modality Back-Office (Web) client</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -960,7 +971,7 @@ Documentation not yet available.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_4_create_a_run_configuration_for_the_modality_front_office_mobile_client">4. Create a Run Configuration for the Modality Front-Office (Mobile) client</h3>
+<h3 id="_create_a_run_configuration_for_modality_front_office_mobile_client">Create a Run Configuration for Modality Front-Office (Mobile) client</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -975,7 +986,7 @@ Documentation not yet available.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_5_create_a_run_configuration_for_the_modality_front_office_web_client">5. Create a Run Configuration for the Modality Front-Office (Web) client</h3>
+<h3 id="_create_a_run_configuration_for_modality_front_office_web_client">Create a Run Configuration for Modality Front-Office (Web) client</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -998,7 +1009,7 @@ Documentation not yet available.
 <p>The Modality clients run independently of each other, but all require the Modality Server to be running, which in turn requires Docker to be running the service containers described above. Therefore, the first two steps below are mandatory before running one or more of the Modality clients locally.</p>
 </div>
 <div class="sect2">
-<h3 id="_1_ensure_docker_is_running">1. Ensure Docker is running <strong class="red">*</strong></h3>
+<h3 id="_ensure_docker_is_running">Ensure Docker is running <strong class="red">*</strong></h3>
 <div class="literalblock">
 <div class="content">
 <pre>cd $MODALITY_ROOT/docker
@@ -1007,7 +1018,7 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_2_start_the_modality_server">2. Start the Modality Server <strong class="red">*</strong></h3>
+<h3 id="_start_the_modality_server">Start the Modality Server <strong class="red">*</strong></h3>
 <div class="paragraph">
 <p>Start the Modality server by executing the run configuration:</p>
 </div>
@@ -1018,7 +1029,7 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_3_start_the_modality_back_office_desktop_client">3. Start the Modality Back-Office (Desktop) client</h3>
+<h3 id="_start_modality_back_office_desktop_client">Start Modality Back-Office (Desktop) client</h3>
 <div class="paragraph">
 <p>Start the Modality Back-Office (Desktop) client by executing run configuration:</p>
 </div>
@@ -1037,7 +1048,7 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_4_start_the_modality_back_office_web_client">4. Start the Modality Back-Office (Web) client</h3>
+<h3 id="_start_modality_back_office_web_client">Start Modality Back-Office (Web) client</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1052,7 +1063,7 @@ Documentation not yet available.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_5_start_the_modality_front_office_mobile_client">5. Start the Modality Front-Office (Mobile) client</h3>
+<h3 id="_start_modality_front_office_mobile_client">Start Modality Front-Office (Mobile) client</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1067,7 +1078,7 @@ Documentation not yet available.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_6_start_the_modality_front_office_web_client">6. Start the Modality Front-Office (Web) client</h3>
+<h3 id="_start_the_modality_front_office_web_client">Start the Modality Front-Office (Web) client</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1295,7 +1306,7 @@ of this documentation.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-12 13:49:54 UTC
+Last updated 2022-07-12 14:05:45 UTC
 </div>
 </div>
 </body>
