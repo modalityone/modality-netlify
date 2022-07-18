@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Last updated: 2022-07-12">
+<meta name="author" content="Last updated: 2022-07-18">
 <title>Modality Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -591,7 +591,7 @@ window.onload = function() {
 <div id="header">
 <h1>Modality Documentation</h1>
 <div class="details">
-<span id="author" class="author">Last updated: 2022-07-12</span><br>
+<span id="author" class="author">Last updated: 2022-07-18</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -605,9 +605,16 @@ window.onload = function() {
 </li>
 <li><a href="#_the_modality_architecture">The Modality Architecture</a>
 <ul class="sectlevel2">
-<li><a href="#_native_web_applications">Native web applications</a></li>
-<li><a href="#_native_mobile_applications">Native mobile applications</a></li>
-<li><a href="#_native_desktop_applications">Native desktop applications</a></li>
+<li><a href="#_layers">Layers</a></li>
+<li><a href="#_all_layer_aggregation">All-Layer Aggregation</a></li>
+<li><a href="#_technologies">Technologies</a></li>
+</ul>
+</li>
+<li><a href="#_native_applications">Native applications</a>
+<ul class="sectlevel2">
+<li><a href="#_web_apps">Web apps</a></li>
+<li><a href="#_mobile_apps">Mobile apps</a></li>
+<li><a href="#_desktop_apps">Desktop apps</a></li>
 </ul>
 </li>
 <li><a href="#_installation">Installation</a>
@@ -677,7 +684,7 @@ window.onload = function() {
 <div class="sect2">
 <h3 id="_open_source">Open-source</h3>
 <div class="paragraph">
-<p>Modality is licensed under the <a href="https://github.com/mongoose-project/mongoose/blob/main/LICENSE" target="_blank" rel="noopener">Apache License Version 2.0</a>, is completely free to use and modify, and is available on <a href="https://github.com/mongoose-project/mongoose" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>Modality is licensed under the <a href="https://github.com/mongoose-project/modality/blob/main/LICENSE" target="_blank" rel="noopener">Apache License Version 2.0</a>, is completely free to use and modify, and is available on <a href="https://github.com/mongoose-project/modality" target="_blank" rel="noopener">GitHub</a>.</p>
 </div>
 </div>
 </div>
@@ -685,6 +692,108 @@ window.onload = function() {
 <div class="sect1">
 <h2 id="_the_modality_architecture">The Modality Architecture</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_layers">Layers</h3>
+<div class="paragraph">
+<p>Modality is divided into layers of functionality, shown below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Layer</th>
+<th class="tableblock halign-left valign-top">Repository</th>
+<th class="tableblock halign-left valign-top">Example modules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business logic (top layer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/mongoose-project/modality" target="_blank" rel="noopener">modality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modality-event, modality-hotel, modality-restaurant, modality-catering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ecommerce</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/mongoose-project/modality" target="_blank" rel="noopener">modality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modality-ecommerce</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/mongoose-project/modality" target="_blank" rel="noopener">modality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modality-crm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/mongoose-project/modality" target="_blank" rel="noopener">modality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modality-base</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WebFX Stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/webfx-project/webfx-stack" target="_blank" rel="noopener">webfx-stack</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">webfx-stack</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WebFX (bottom layer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/webfx-project/webfx" target="_blank" rel="noopener">webfx</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">webfx-kit</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_business_logic">Business logic</h4>
+<div class="paragraph">
+<p>The highest layer of the architecture consists of business-specific modules implementing logic for events, hotels, restaurants etc. This is a customisable layer, and developers can choose to add only the modules they need, as well as provide their own.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ecommerce">Ecommerce</h4>
+<div class="paragraph">
+<p>The next layer down is the ecommerce layer. This provides a generic domain model for ecommerce, which models sales, accounts etc. It is the location for payment gateway integration and ecommerce-specific UIs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_crm">CRM</h4>
+<div class="paragraph">
+<p>The CRM layer provides the essential CRM features, including customer accounts, integrated mailing system etc.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_base">Base</h4>
+<div class="paragraph">
+<p>The Base layer is a fully operational implementation of the webfx-stack layer beneath, based on the Postgres database. This layer is a pure technical solution that isn&#8217;t bound to any specific domain, and so is large in application scope.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_webfx_stack">WebFX Stack</h4>
+<div class="paragraph">
+<p>The WebFX Stack layer provides an opinionated framework for developing enterprise applications with WebFX. This layer is responsible for communication between client and server (using a WebSocket bus), UI routing, ORM, push notification, auth, i18n, etc. The layer provides interfaces in all cases, but not always full implementations, so that it can be adapted to any kind of system.</p>
+</div>
+<div class="paragraph">
+<p>Unlike most Java frameworks, this layer works principally on the client side, following the trend initiated by mobile apps where most of the application code has been moved to the client and can run offline.</p>
+</div>
+<div class="paragraph">
+<p>It is designed to work with JavaFX (for example, i18n provides JavaFX bindings for use with any kind of control; and the authorisation framework automatically enables/disables and shows/hides controls depending on user access).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_webfx">WebFX</h4>
+<div class="paragraph">
+<p>WebFX is the foundation layer, providing a web port of JavaFX (in the webfx-kit module) that can be compiled by GWT together with your application code. It is a Java-based cross-platform solution that can be used in any domain.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_all_layer_aggregation">All-Layer Aggregation</h3>
+<div class="paragraph">
+<p>Modality ships with the <code>modality-all</code> module, which aggregates together the full set of modules across all layers, for use by developers right away.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_technologies">Technologies</h3>
 <div class="paragraph">
 <p>Modality is developed using the following technologies:</p>
 </div>
@@ -843,20 +952,26 @@ window.onload = function() {
 <div class="paragraph">
 <p>The services are orchestrated by <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener">Docker</a> when running Modality on development machines (instructions given later in this document).</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_native_applications">Native applications</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_native_web_applications">Native web applications</h3>
+<h3 id="_web_apps">Web apps</h3>
 <div class="paragraph">
 <p>Modality is the first large-scale Java project to use <a href="https://docs.webfx.dev" target="_blank" rel="noopener">WebFX</a> - a toolkit that transpiles JavaFX applications into pure JavaScript web apps for direct execution in the browser.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_native_mobile_applications">Native mobile applications</h3>
+<h3 id="_mobile_apps">Mobile apps</h3>
 <div class="paragraph">
 <p>Modality uses the <a href="https://gluonhq.com/products/mobile/" target="_blank" rel="noopener">Gluon</a> toolchain to compile the codebase into native, installable apps ready for inclusion into the Google Play and Apple App stores.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_native_desktop_applications">Native desktop applications</h3>
+<h3 id="_desktop_apps">Desktop apps</h3>
 <div class="paragraph">
 <p>Modality also provides desktop apps, which provide exactly the same UI as the web apps generated from the same source. This is useful for developers, allowing Java code to be rapidly developed and tested via the desktop, before subsequent transpilation into JavaScript and mobile (which takes time).</p>
 </div>
@@ -1389,7 +1504,7 @@ of this documentation.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-12 16:08:16 UTC
+Last updated 2022-07-18 15:01:55 UTC
 </div>
 </div>
 </body>
