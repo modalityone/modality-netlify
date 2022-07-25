@@ -1,5 +1,5 @@
 {
-  "serverHost": "10.101.0.194",
+  "serverHost": "localhost",
   "serverPort": 9090,
   "serverSSL": false,
   "busPrefix": "eventbus",
