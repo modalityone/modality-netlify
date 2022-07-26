@@ -635,25 +635,24 @@ window.onload = function() {
 </li>
 <li><a href="#_configure_modality_for_development">Configure Modality for Development</a>
 <ul class="sectlevel2">
-<li><a href="#_create_run_configuration_for_modality_server">Create Run Configuration for Modality Server</a></li>
-<li><a href="#_create_run_configuration_for_back_office_desktop_client">Create Run Configuration for Back-Office Desktop client</a></li>
-<li><a href="#_create_run_configuration_for_back_office_web_client">Create Run Configuration for Back-Office Web client</a></li>
-<li><a href="#_create_run_configuration_for_front_office_mobile_client">Create Run Configuration for Front-Office Mobile client</a></li>
-<li><a href="#_create_run_configuration_for_front_office_web_client">Create Run Configuration for Front-Office Web client</a></li>
+<li><a href="#_modality_server">Modality Server</a></li>
+<li><a href="#_back_office_desktop">Back-Office Desktop</a></li>
+<li><a href="#_front_office_desktop">Front-Office Desktop</a></li>
 </ul>
 </li>
-<li><a href="#_run_modality_on_development">Run Modality on Development</a>
+<li><a href="#_build_run_modality_on_development">Build &amp; Run Modality on Development</a>
 <ul class="sectlevel2">
-<li><a href="#_ensure_docker_is_running">Ensure Docker is running <strong class="red">*</strong></a></li>
-<li><a href="#_build_run_modality_server">Build &amp; run Modality Server <strong class="red">*</strong></a></li>
-<li><a href="#_build_run_back_office_desktop_client">Build &amp; run Back-Office Desktop client</a></li>
-<li><a href="#_build_open_back_office_web_client">Build &amp; open Back-Office Web client</a></li>
-<li><a href="#_build_run_front_office_mobile_client">Build &amp; run Front-Office Mobile client</a></li>
-<li><a href="#_build_open_front_office_web_client">Build &amp; open Front-Office Web client</a></li>
+<li><a href="#_docker">Docker <strong class="red">*</strong></a></li>
+<li><a href="#_modality_server_2">Modality Server <strong class="red">*</strong></a></li>
+<li><a href="#_back_office_desktop_2">Back-Office Desktop</a></li>
+<li><a href="#_back_office_web">Back-Office Web</a></li>
+<li><a href="#_back_office_mobile">Back-Office Mobile</a></li>
+<li><a href="#_front_office_desktop_2">Front-Office Desktop</a></li>
+<li><a href="#_front_office_web">Front-Office Web</a></li>
+<li><a href="#_front_office_mobile">Front-Office Mobile</a></li>
 </ul>
 </li>
 <li><a href="#_modality_database">Modality Database</a></li>
-<li><a href="#_modality_development_database">Modality Development Database</a></li>
 <li><a href="#_modality_session">Modality Session</a></li>
 <li><a href="#_using_docker">Using Docker</a>
 <ul class="sectlevel2">
@@ -744,7 +743,7 @@ window.onload = function() {
 </tbody>
 </table>
 <div class="paragraph">
-<p>&#8230;&#8203;consists of three end-user client applications:</p>
+<p>&#8230;&#8203;consists of four end-user client applications:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -761,8 +760,13 @@ window.onload = function() {
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Front-Office Mobile</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Back-Office Web</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WebFX + GWT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Back-Office Mobile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gluon</p></td>
 </tr>
 <tr>
@@ -771,9 +775,9 @@ window.onload = function() {
 <td class="tableblock halign-left valign-top"><p class="tableblock">WebFX + GWT</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Back-Office Web</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Administrator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WebFX + GWT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Front-Office Mobile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gluon</p></td>
 </tr>
 </tbody>
 </table>
@@ -1133,7 +1137,7 @@ docker-compose up</pre>
 <h2 id="_configure_modality_for_development">Configure Modality for Development</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_create_run_configuration_for_modality_server">Create Run Configuration for Modality Server</h3>
+<h3 id="_modality_server">Modality Server</h3>
 <div class="paragraph">
 <p>In order to run any of the Modality client applications, the Modality Server should first be running. The Modality Server is a <a href="https://vertx.io/" target="_blank" rel="noopener">Vert.x</a> server that proxies requests to the database and is responsible for establishing and maintaining user sessions.</p>
 </div>
@@ -1158,7 +1162,7 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_run_configuration_for_back_office_desktop_client">Create Run Configuration for Back-Office Desktop client</h3>
+<h3 id="_back_office_desktop">Back-Office Desktop</h3>
 <div class="paragraph">
 <p>The Back-Office Desktop client is an application used by developers of Modality, and emulates the web user interface used by administrators of the system.</p>
 </div>
@@ -1175,7 +1179,7 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_run_configuration_for_back_office_web_client">Create Run Configuration for Back-Office Web client</h3>
+<h3 id="_front_office_desktop">Front-Office Desktop</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1183,37 +1187,7 @@ docker-compose up</pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-We use the WebFX CLI to build web clients (described later), so no run configuration necessary.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_create_run_configuration_for_front_office_mobile_client">Create Run Configuration for Front-Office Mobile client</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The Front-Office Mobile client is not yet implemented.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_create_run_configuration_for_front_office_web_client">Create Run Configuration for Front-Office Web client</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The Front-Office Web client is not yet implemented.
+The Front-Office Desktop client is not yet implemented.
 </td>
 </tr>
 </table>
@@ -1222,13 +1196,16 @@ The Front-Office Web client is not yet implemented.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_run_modality_on_development">Run Modality on Development</h2>
+<h2 id="_build_run_modality_on_development">Build &amp; Run Modality on Development</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Modality clients run independently of each other, but all require the Modality Server to be running, which in turn requires Docker to be running the service containers described above. Therefore, the first two steps below are mandatory before running one or more of the Modality clients locally.</p>
 </div>
 <div class="sect2">
-<h3 id="_ensure_docker_is_running">Ensure Docker is running <strong class="red">*</strong></h3>
+<h3 id="_docker">Docker <strong class="red">*</strong></h3>
+<div class="paragraph">
+<p>Ensure that Docker is running:</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>cd $MODALITY_ROOT/docker
@@ -1237,7 +1214,7 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_run_modality_server">Build &amp; run Modality Server <strong class="red">*</strong></h3>
+<h3 id="_modality_server_2">Modality Server <strong class="red">*</strong></h3>
 <div class="paragraph">
 <p>Build and run the server by executing its run configuration:</p>
 </div>
@@ -1248,7 +1225,7 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_run_back_office_desktop_client">Build &amp; run Back-Office Desktop client</h3>
+<h3 id="_back_office_desktop_2">Back-Office Desktop</h3>
 <div class="paragraph">
 <p>Build and run the Back-Office Desktop client by executing its configuration:</p>
 </div>
@@ -1267,7 +1244,7 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_open_back_office_web_client">Build &amp; open Back-Office Web client</h3>
+<h3 id="_back_office_web">Back-Office Web</h3>
 <div class="paragraph">
 <p>First <strong>build</strong> the index.html file:</p>
 </div>
@@ -1305,7 +1282,13 @@ webfx build --gwt</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_run_front_office_mobile_client">Build &amp; run Front-Office Mobile client</h3>
+<h3 id="_back_office_mobile">Back-Office Mobile</h3>
+<div class="paragraph">
+<p>Full instructions (and limitations) for compiling the codebase to native Android and iOS apps are available on the WebFX documentation site <a href="https://docs.webfx.dev/#_android_platform">here</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_front_office_desktop_2">Front-Office Desktop</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1313,14 +1296,14 @@ webfx build --gwt</pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The Front-Office Mobile client is not yet implemented.
+The Front-Office Desktop client is not yet implemented.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_open_front_office_web_client">Build &amp; open Front-Office Web client</h3>
+<h3 id="_front_office_web">Front-Office Web</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1329,6 +1312,21 @@ The Front-Office Mobile client is not yet implemented.
 </td>
 <td class="content">
 The Front-Office Web client is not yet implemented.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_front_office_mobile">Front-Office Mobile</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The Front-Office Mobile client is not yet implemented.
 </td>
 </tr>
 </table>
@@ -1374,57 +1372,6 @@ The Front-Office Web client is not yet implemented.
 docker-compose down
 docker-compose up</pre>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_modality_development_database">Modality Development Database</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Modality project additionally provides a development database that is pre-populated with test data, available from the <a href="https://github.com/mongoose-project/modality-dev-db" target="_blank" rel="noopener">modality-dev-db</a> repository.</p>
-</div>
-<div class="paragraph">
-<p>If you wish to import this database, you will need to:</p>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>shut down the Modality server</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>shut down the docker containers</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>delete the <code>docker/data/</code> folder</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>download the <a href="https://github.com/mongoose-project/modality-dev-db" target="_blank" rel="noopener">modality-dev-db</a> repository</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>decompress the <code>V0001__modality_dev_db.sql.zip</code> file in the modality-dev-db repository</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>move the unzipped <code>V0001__modality_dev_db.sql</code> to the <code>modality-base/modality-base-server-datasource/src/main/resources/db/</code> folder</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>move all the other scripts temporarily out of the folder</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>restart the docker containers - this will auto-import the development database</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="9"></i><b>9</b></td>
-<td>wait until the import is complete. Due to the size of the development database, it can take 20+ minutes to import. Modality will not be usable during this time.</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -1548,7 +1495,7 @@ of this documentation.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-26 10:26:43 UTC
+Last updated 2022-07-26 15:36:46 UTC
 </div>
 </div>
 </body>
