@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Last updated: 2022-07-26">
+<meta name="author" content="Last updated: 2022-07-27">
 <title>Modality Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -591,7 +591,7 @@ window.onload = function() {
 <div id="header">
 <h1>Modality Documentation</h1>
 <div class="details">
-<span id="author" class="author">Last updated: 2022-07-26</span><br>
+<span id="author" class="author">Last updated: 2022-07-27</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -653,13 +653,14 @@ window.onload = function() {
 </ul>
 </li>
 <li><a href="#_modality_database">Modality Database</a></li>
+<li><a href="#_modality_development_database">Modality Development Database</a></li>
 <li><a href="#_modality_session">Modality Session</a></li>
 <li><a href="#_using_docker">Using Docker</a>
 <ul class="sectlevel2">
 <li><a href="#_connect_to_the_docker_database_container">Connect to the Docker database container</a></li>
 <li><a href="#_connect_to_the_docker_session_container">Connect to the Docker session container</a></li>
 <li><a href="#_shut_down_docker">Shut down Docker</a></li>
-<li><a href="#_destroy_rebuild_the_docker_containers">Destroy &amp; rebuild the Docker containers</a></li>
+<li><a href="#prune_docker_content">Prune Docker content</a></li>
 </ul>
 </li>
 <li><a href="#_deploy_modality_to_heroku">Deploy Modality to Heroku</a></li>
@@ -1376,6 +1377,61 @@ docker-compose up</pre>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_modality_development_database">Modality Development Database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Modality project additionally provides a development database that is pre-populated with test data, available from the <a href="https://github.com/mongoose-project/modality-dev-db" target="_blank" rel="noopener">modality-dev-db</a> repository.</p>
+</div>
+<div class="paragraph">
+<p>If you wish to import this database, you will need to:</p>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>shut down the Modality server</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>shut down the Docker containers</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>delete the <code>docker/data/</code> folder</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><a href="#prune_docker_content">prune all docker content</a></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>download the <a href="https://github.com/modalityproject/modality-dev-db" target="_blank" rel="noopener">modality-dev-db</a> repository</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>decompress the <code>V0001__modality_dev_db.sql.zip</code> file in the modality-dev-db repository</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>move the unzipped <code>V0001__modality_dev_db.sql</code> to the <code>modality-base/modality-base-server-datasource/src/main/resources/db/</code> folder</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>move all the other scripts temporarily out of the folder</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>restart the docker containers - this will auto-import the development database</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td>wait until the import is complete. Due to the size of the development database, it can take 30+ minutes to import. Modality will not be usable during this time.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_modality_session">Modality Session</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1435,9 +1491,9 @@ docker-compose down</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_destroy_rebuild_the_docker_containers">Destroy &amp; rebuild the Docker containers</h3>
+<h3 id="prune_docker_content">Prune Docker content</h3>
 <div class="paragraph">
-<p>Sometimes you will want a fresh set of containers. The simplest way to do this is:</p>
+<p>Sometimes you will want a pristine Docker environment. The simplest way to do this is:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1495,7 +1551,7 @@ of this documentation.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-26 15:36:46 UTC
+Last updated 2022-07-27 11:28:05 UTC
 </div>
 </div>
 </body>
