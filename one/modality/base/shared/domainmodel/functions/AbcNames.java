@@ -1,4 +1,4 @@
-package org.modality_project.base.shared.domainmodel.functions;
+package one.modality.base.shared.domainmodel.functions;
 
 import dev.webfx.stack.orm.expression.lci.DomainReader;
 import dev.webfx.stack.orm.expression.terms.function.Function;
