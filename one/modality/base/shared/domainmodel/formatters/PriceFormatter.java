@@ -1,4 +1,4 @@
-package org.modality_project.base.shared.domainmodel.formatters;
+package one.modality.base.shared.domainmodel.formatters;
 
 import dev.webfx.stack.orm.domainmodel.formatter.ValueFormatter;
 import dev.webfx.stack.orm.domainmodel.formatter.ValueParser;
