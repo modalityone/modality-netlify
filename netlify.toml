@@ -8,8 +8,8 @@ Cross-Origin-Opener-Policy = "same-origin-allow-popups"
 Content-Security-Policy = "frame-src https://backoffice.modality.one/login/google;"
 
 [[redirects]]
-from = "/login/google"
-to = "https://young-earwig-80.telebit.io/login/google"
+from = "/login/google sessionId=:sessionId"
+to = "https://young-earwig-80.telebit.io/login/google?sessionId=:sessionId"
 status = 200
 force = true
 
