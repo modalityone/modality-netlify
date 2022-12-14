@@ -22,7 +22,7 @@ status = 200
 force = true
 
 [[redirects]]
-from = "/login/facbook/callback"
-to = "https://young-earwig-80.telebit.io/login/facbook/callback"
+from = "/login/facebook/callback"
+to = "https://young-earwig-80.telebit.io/login/facebook/callback"
 status = 200
 force = true
