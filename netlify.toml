@@ -30,7 +30,7 @@ force = true
 
 [[redirects]]
 from = "/login/facebook/callback"
-to = "https://young-earwig-80.telebit.io/login/facebook/callback?state=:state"
-query = {state = ":state"}
+to = "https://young-earwig-80.telebit.io/login/facebook/callback?code=:code&state=:state"
+query = {state = ":state", code = ":code"}
 status = 200
 force = true
