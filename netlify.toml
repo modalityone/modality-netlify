@@ -20,3 +20,9 @@ to = "https://young-earwig-80.telebit.io/login/google/callback?sessionId=:sessio
 query = {sessionId = ":sessionId"}
 status = 200
 force = true
+
+[[redirects]]
+from = "/login/facbook/callback"
+to = "https://young-earwig-80.telebit.io/login/facbook/callback"
+status = 200
+force = true
