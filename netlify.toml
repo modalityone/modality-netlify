@@ -16,8 +16,8 @@ force = true
 
 [[redirects]]
 from = "/login/google/callback"
-to = "https://young-earwig-80.telebit.io/login/google/callback?sessionId=:sessionId&credential=:credential"
-query = {sessionId = ":sessionId", credential = ":credential"}
+to = "https://young-earwig-80.telebit.io/login/google/callback?sessionId=:sessionId"
+query = {sessionId = ":sessionId"}
 status = 200
 force = true
 
