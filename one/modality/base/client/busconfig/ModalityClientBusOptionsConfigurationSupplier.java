@@ -6,12 +6,12 @@ import dev.webfx.stack.conf.spi.impl.resource.SingleResourceConfigurationSupplie
  * @author Bruno Salmon
  */
 public final class ModalityClientBusOptionsConfigurationSupplier
-    extends SingleResourceConfigurationSupplier {
+        extends SingleResourceConfigurationSupplier {
 
-  private static final String BUS_OPTIONS_CONFIGURATION_NAME = "ClientBusOptions";
-  private static final String BUS_OPTIONS_RESOURCE_FILE_NAME = "ClientBusOptions.default.json";
+    private static final String BUS_OPTIONS_CONFIGURATION_NAME = "ClientBusOptions";
+    private static final String BUS_OPTIONS_RESOURCE_FILE_NAME = "ClientBusOptions.default.json";
 
-  public ModalityClientBusOptionsConfigurationSupplier() {
-    super(BUS_OPTIONS_CONFIGURATION_NAME, BUS_OPTIONS_RESOURCE_FILE_NAME);
-  }
+    public ModalityClientBusOptionsConfigurationSupplier() {
+        super(BUS_OPTIONS_CONFIGURATION_NAME, BUS_OPTIONS_RESOURCE_FILE_NAME);
+    }
 }
