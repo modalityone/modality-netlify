@@ -1,0 +1,1 @@
+moduleSearchIndex = [{"l":"kbs.backoffice.application"},{"l":"kbs.frontoffice.activities.home"},{"l":"kbs.frontoffice.application"},{"l":"kbs.frontoffice.application.openjfx"},{"l":"kbs.server.newsimport"},{"l":"kbs.server.podcastsimport"}];updateSearchResults();

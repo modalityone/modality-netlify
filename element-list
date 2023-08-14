@@ -1,0 +1,15 @@
+module:kbs.backoffice.application
+org.kadampabookings.kbs.backoffice
+module:kbs.frontoffice.activities.home
+org.kadampabookings.kbs.frontoffice.activities.home
+org.kadampabookings.kbs.frontoffice.activities.home.routing
+org.kadampabookings.kbs.frontoffice.activities.home.views
+org.kadampabookings.kbs.frontoffice.operations.routes.home
+module:kbs.frontoffice.application
+org.kadampabookings.kbs.frontoffice
+module:kbs.frontoffice.application.openjfx
+org.kadampabookings.kbs.frontoffice.conf.openjfx
+module:kbs.server.newsimport
+org.kadampabookings.kbs.server.jobs.newsimport
+module:kbs.server.podcastsimport
+org.kadampabookings.kbs.server.jobs.podcastsimport
