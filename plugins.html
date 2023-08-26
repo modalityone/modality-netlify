@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="Apache Maven Doxia Site Renderer 2.0.0-M10" />
-    <title>kbs3 – Project Plugins</title>
+    <title>kbs3-aggregate – Project Plugins</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-2.0.0-M6.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -20,7 +20,7 @@
     <div class="container-fluid">
       <header>
         <div id="banner">
-          <div class="pull-left"><div id="bannerLeft"><h1>kbs3</h1>
+          <div class="pull-left"><div id="bannerLeft"><h1>kbs3-aggregate</h1>
 </div>
 </div>
           <div class="pull-right"></div>
@@ -32,7 +32,7 @@
         <li id="publishDate">Last Published: 2023-08-26<span class="divider">|</span>
 </li>
           <li id="projectVersion">Version: 1.0.0-SNAPSHOT</li>
-        <li class="pull-right"><a href="${project.url}" title="kbs3">kbs3</a></li>
+        <li class="pull-right"><a href="${project.url}" title="kbs3-aggregate">kbs3-aggregate</a></li>
           </ul>
         </div>
       </header>
@@ -43,22 +43,20 @@
    <li class="nav-header">Parent Project</li>
     <li><a href="../index.html" title="webfx-parent"><span class="none"></span>webfx-parent</a></li>
    <li class="nav-header">Modules</li>
-    <li><a href="kbs-backoffice-application/index.html" title="kbs-backoffice-application"><span class="none"></span>kbs-backoffice-application</a></li>
-    <li><a href="kbs-backoffice-application-gluon/index.html" title="KbsBackoffice"><span class="none"></span>KbsBackoffice</a></li>
-    <li><a href="kbs-backoffice-application-gwt/index.html" title="kbs-backoffice-application-gwt"><span class="none"></span>kbs-backoffice-application-gwt</a></li>
-    <li><a href="kbs-backoffice-application-openjfx/index.html" title="kbs-backoffice-application-openjfx"><span class="none"></span>kbs-backoffice-application-openjfx</a></li>
-    <li><a href="kbs-frontoffice-activities-home/index.html" title="kbs-frontoffice-activities-home"><span class="none"></span>kbs-frontoffice-activities-home</a></li>
-    <li><a href="kbs-frontoffice-application/index.html" title="kbs-frontoffice-application"><span class="none"></span>kbs-frontoffice-application</a></li>
-    <li><a href="kbs-frontoffice-application-gluon/index.html" title="KbsFrontoffice"><span class="none"></span>KbsFrontoffice</a></li>
-    <li><a href="kbs-frontoffice-application-gwt/index.html" title="kbs-frontoffice-application-gwt"><span class="none"></span>kbs-frontoffice-application-gwt</a></li>
-    <li><a href="kbs-frontoffice-application-openjfx/index.html" title="kbs-frontoffice-application-openjfx"><span class="none"></span>kbs-frontoffice-application-openjfx</a></li>
-    <li><a href="kbs-server-application/index.html" title="kbs-server-application"><span class="none"></span>kbs-server-application</a></li>
-    <li><a href="kbs-server-application-vertx/index.html" title="kbs-server-application-vertx"><span class="none"></span>kbs-server-application-vertx</a></li>
-    <li><a href="kbs-server-newsimport/index.html" title="kbs-server-newsimport"><span class="none"></span>kbs-server-newsimport</a></li>
-    <li><a href="kbs-server-podcastsimport/index.html" title="kbs-server-podcastsimport"><span class="none"></span>kbs-server-podcastsimport</a></li>
+    <li><a href="../kbs3/index.html" title="kbs3"><span class="none"></span>kbs3</a></li>
+    <li><a href="../kbsx/index.html" title="kbsx"><span class="none"></span>kbsx</a></li>
+    <li><a href="../modality/index.html" title="modality"><span class="none"></span>modality</a></li>
+    <li><a href="../webfx-extras/index.html" title="webfx-extras"><span class="none"></span>webfx-extras</a></li>
+    <li><a href="../webfx/index.html" title="webfx"><span class="none"></span>webfx</a></li>
+    <li><a href="../webfx-lib-javacupruntime/index.html" title="webfx-lib-javacupruntime"><span class="none"></span>webfx-lib-javacupruntime</a></li>
+    <li><a href="../webfx-platform/index.html" title="webfx-platform"><span class="none"></span>webfx-platform</a></li>
+    <li><a href="../index.html" title="webfx-parent"><span class="none"></span>webfx-parent</a></li>
+    <li><a href="../webfx-stack-parent/webfx-stack/index.html" title="webfx-stack"><span class="none"></span>webfx-stack</a></li>
+    <li><a href="../webfx-stack-parent/index.html" title="webfx-stack-parent"><span class="none"></span>webfx-stack-parent</a></li>
    <li class="nav-header">Project Documentation</li>
     <li><a href="project-info.html" title="Project Information"><span class="icon-chevron-down"></span>Project Information</a>
      <ul class="nav nav-list">
+      <li><a href="dependency-convergence.html" title="Dependency Convergence"><span class="none"></span>Dependency Convergence</a></li>
       <li><a href="dependency-info.html" title="Dependency Information"><span class="none"></span>Dependency Information</a></li>
       <li><a href="dependency-management.html" title="Dependency Management"><span class="none"></span>Dependency Management</a></li>
       <li><a href="distribution-management.html" title="Distribution Management"><span class="none"></span>Distribution Management</a></li>
@@ -88,26 +86,22 @@
 <th>ArtifactId</th>
 <th>Version</th></tr>
 <tr class="b">
-<td style="text-align: left;">dev.webfx</td>
-<td>webfx-maven-plugin</td>
-<td>0.1.0-SNAPSHOT</td></tr>
-<tr class="a">
 <td style="text-align: left;">org.apache.maven.plugins</td>
 <td><a class="externalLink" href="https://maven.apache.org/plugins/maven-clean-plugin/">maven-clean-plugin</a></td>
 <td>3.2.0</td></tr>
-<tr class="b">
+<tr class="a">
 <td style="text-align: left;">org.apache.maven.plugins</td>
 <td><a class="externalLink" href="https://maven.apache.org/plugins/maven-deploy-plugin/">maven-deploy-plugin</a></td>
 <td>3.1.1</td></tr>
-<tr class="a">
+<tr class="b">
 <td style="text-align: left;">org.apache.maven.plugins</td>
 <td><a class="externalLink" href="https://maven.apache.org/enforcer/maven-enforcer-plugin/">maven-enforcer-plugin</a></td>
 <td>3.3.0</td></tr>
-<tr class="b">
+<tr class="a">
 <td style="text-align: left;">org.apache.maven.plugins</td>
 <td><a class="externalLink" href="https://maven.apache.org/plugins/maven-install-plugin/">maven-install-plugin</a></td>
 <td>3.1.0</td></tr>
-<tr class="a">
+<tr class="b">
 <td style="text-align: left;">org.apache.maven.plugins</td>
 <td><a class="externalLink" href="https://maven.apache.org/plugins/maven-site-plugin/">maven-site-plugin</a></td>
 <td>4.0.0-M8</td></tr></table></section><section>
